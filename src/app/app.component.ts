@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SpaceShip } from './space/space-ship';
 
 @Component({
   selector: 'app-root',
