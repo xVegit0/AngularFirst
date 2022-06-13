@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BomberShip } from '../bomber-ship';
 import { FighterShip } from '../fighter-ship';
+import { Pilot } from '../pilot';
 import { SpaceShip } from '../space-ship';
 
 @Component({
@@ -14,7 +15,7 @@ export class HangarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.spaceShips.push(new FighterShip());
+    this.spaceShips.push(new FighterShip(new Pilot('Lee Adama', '/assets/adama.png')));
     this.spaceShips.push(new BomberShip());
   }
 
