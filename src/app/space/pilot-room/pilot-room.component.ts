@@ -13,11 +13,11 @@ export class PilotRoomComponent implements OnInit {
 	@Output() selected = new EventEmitter<Pilot | null>();
 	constructor(private pilotService: PilotService) {}
 	ngOnInit() {
-    this.pilotService.getPilots().subscribe({
-      next: (pilots) => this.pilots=pilots,
-      error: () => alert('Nie udało się pobrać pilotów')
-    })
-  }
+		this.pilotService.getPilots().subscribe({
+			next: (pilots) => (this.pilots = pilots),
+			error: () => alert('Nie udało się pobrać'),
+		});
+	}
 
 	select(pilot: Pilot | null): void {
 		this.selectedPilot = pilot;

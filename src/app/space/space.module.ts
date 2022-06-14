@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SpaceRoutingModule } from './space-routing.module';
@@ -24,7 +25,8 @@ import { EngineersRoomComponent } from './engineers-room/engineers-room.componen
   imports: [
     CommonModule,
     SpaceRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class SpaceModule { }
