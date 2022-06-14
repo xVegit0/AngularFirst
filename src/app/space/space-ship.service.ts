@@ -11,7 +11,7 @@ import { SpaceShipType } from './space-ship-type';
 })
 export class SpaceShipService {
 	static shipProductionTime = 2000;
-  hangarShips = new BehaviorSubject<SpaceShip[]>([]);
+	hangarShips = new BehaviorSubject<SpaceShip[]>([]);
 	constructor() {}
 
 	produceShips(formValue: OrderFormValue): Observable<SpaceShip> {
@@ -22,7 +22,18 @@ export class SpaceShipService {
 		return interval(SpaceShipService.shipProductionTime).pipe(
 			map(() => new shipClass()),
 			take(formValue.shipCount),
-      tap((spaceShip) => this.hangarShips.next([...this.hangarShips.getValue(), spaceShip]))
+			tap((spaceShip) =>
+				this.hangarShips.next([
+					...this.hangarShips.getValue(),
+					spaceShip,
+				])
+			)
 		);
+	}
+
+	removeShip(shipIndex: number) {
+		const ships = [...this.hangarShips.getValue()];
+		ships.splice(shipIndex, 1);
+		this.hangarShips.next(ships);
 	}
 }
