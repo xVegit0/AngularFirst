@@ -1,4 +1,5 @@
 <div class="hangar-section">
+  <h1>Hangar</h1>
   <app-space-ship *ngFor="let spaceShip of spaceShips" [spaceShip]="spaceShip">
     <button *ngIf="selectedPilot && !spaceShip.pilot" (click)="assignPilot(spaceShip)">Pilotuj</button>
     <button *ngIf="spaceShip.pilot" (click)="deassignPilot(spaceShip)">Opuść</button>
@@ -6,4 +7,6 @@
 </div>
 <div class="hangar-section">
   <app-pilot-room (selected)="setSelectedPilot($event)"></app-pilot-room>
+  <app-engineers-room></app-engineers-room>
 </div>
+
