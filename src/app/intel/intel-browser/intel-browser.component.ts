@@ -12,7 +12,7 @@ export class IntelBrowserComponent implements OnInit {
 	sourceControl = new FormControl('');
 	options = [
 		{ name: 'ESA', url: 'http://www.esa.int/ESA' },
-		{ name: 'POLSA', url: 'https://www.polsa.gov.pl/pl' },
+		{ name: 'POLSA', url: 'https://www.polandballwiki.com/wiki/Poland_cannot_into_space' },
 	];
 	sourceUrl: Observable<SafeResourceUrl> =
 		this.sourceControl.valueChanges.pipe(
