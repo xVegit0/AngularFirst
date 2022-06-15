@@ -9,6 +9,7 @@ import { PilotRoomComponent } from './pilot-room/pilot-room.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EngineersRoomComponent } from './engineers-room/engineers-room.component';
 import { DestructionRoomComponent } from './destruction-room/destruction-room.component';
+import { PilotFormComponent } from './pilot-form/pilot-form.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { DestructionRoomComponent } from './destruction-room/destruction-room.co
     PilotComponent,
     PilotRoomComponent,
     EngineersRoomComponent,
-    DestructionRoomComponent
+    DestructionRoomComponent,
+    PilotFormComponent
   ],
   exports:[
     HangarComponent,

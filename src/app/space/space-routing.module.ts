@@ -4,6 +4,8 @@ import { HangarComponent } from './hangar/hangar.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DestructionGuard } from './destruction.guard';
+import { PilotFormComponent } from './pilot-form/pilot-form.component';
+import { PilotResolver } from './pilot.reslover';
 
 const routes: Routes = [
 	{
@@ -18,6 +20,11 @@ const routes: Routes = [
 			},
 			{ path: '', redirectTo: 'production', pathMatch: 'full' },
 		],
+	},
+	{
+		path: 'space/pilots/:id',
+		component: PilotFormComponent,
+		resolve: { pilot: PilotResolver },
 	},
 ];
 

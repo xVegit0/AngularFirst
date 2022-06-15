@@ -10,7 +10,7 @@ import { SpaceShipType } from './space-ship-type';
 	providedIn: 'root',
 })
 export class SpaceShipService {
-	static shipProductionTime = 2000;
+	static shipProductionTime = 50;
 	hangarShips = new BehaviorSubject<SpaceShip[]>([]);
 	constructor() {}
 
